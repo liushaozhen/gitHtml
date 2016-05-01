@@ -67,7 +67,8 @@
     },1000);
     var flag = false;
     [].forEach.call(musicBtn, function (val, i, index) {
-        val.addEventListener("click", function () {
+        $(val).on("click",function () {
+        // val.addEventListener("click", function () {
             if (flag) {
                 [].forEach.call(index, function () {
                     arguments[0].className = "musicBtnPlay musicBtn";
