@@ -61,7 +61,9 @@
     window.setTimeout(function () {
         music.play();
         music.addEventListener("canplay", function () {
-            musicBtn.style.display = "block";
+            [].forEach.call(musicBtn, function (val) {
+                val.style.display = "block";
+            });
             musicBtn.className = "musicMove";
         }, false);
     },1000);
