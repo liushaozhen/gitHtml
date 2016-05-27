@@ -55,22 +55,20 @@
             }
         }
     };
+    tools.setScale(640,100);
     //音乐播放暂停
     var musicBtn = document.querySelectorAll(".musicBtn");
     var music = document.getElementById("music");
     window.setTimeout(function () {
         music.play();
         music.addEventListener("canplay", function () {
-            [].forEach.call(musicBtn, function (val) {
-                val.style.display = "block";
-            });
+            musicBtn.style.display = "block";
             musicBtn.className = "musicMove";
         }, false);
     },1000);
     var flag = false;
     [].forEach.call(musicBtn, function (val, i, index) {
-        $(val).on("click",function () {
-        // val.addEventListener("click", function () {
+        val.addEventListener("click", function () {
             if (flag) {
                 [].forEach.call(index, function () {
                     arguments[0].className = "musicBtnPlay musicBtn";
